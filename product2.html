@@ -27,11 +27,14 @@
             text-align: center;
         }
 
-        /* Section 1: Header */
+         /* 3. Header Fix */
         .header-section {
             background-color: var(--accent);
             color: white;
-            padding: 80px 20px;
+            padding: 60px 20px;
+            width: 100%;
+            margin: 0 auto; /* Ensure it centers properly */
+            box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .header-section h1 {
@@ -39,23 +42,47 @@
             margin-bottom: 50px;
         }
 
-        /* Section 2: Visual Graphic Container */
+        /* Ensure the browser calculates padding correctly */
+        /* 1. Global Reset for Image handling */
+        img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        }
+
+        /* 2. Global Section Rule - Improved for Mobile */
+        section {
+            padding: 40px 15px; /* Reduced padding for mobile */
+            max-width: 900px;
+            margin: 0 auto; /* Removed heavy top/bottom margins to prevent alignment issues */
+            text-align: center;
+            width: 100%; /* Ensures it stays within viewport */
+            box-sizing: border-box;
+        }
+
+
+        /* 4. The Graphic Container Fix */
         .graphic-section {
             background-color: white;
+            width: 100%;
+            margin-top: 40px;
         }
 
         .graphic-placeholder {
-            width: 900px;
-            max-width: 500px;
-            height: 300px;
+            width: 100%; /* Take full available width of the parent section */
+            max-width: 900px;
+            min-height: 250px;
             background: var(--light-bg);
             border: 2px dashed var(--accent);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 100px auto;
-            border-radius: 8px;
+            padding: 10px; /* Internal cushion for the image */
+            margin: 20px auto;
+            overflow: hidden; /* Safety net */
         }
+
 
         /* Section 3: Recap/Summary */
         .recap-section {
