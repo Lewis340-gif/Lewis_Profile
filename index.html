@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        /* Start Applied Experience Section */
+        :root {
+            --primary: #1a2a3a;
+            --accent: #008080;
+            --gray: #a9a7a7;
+        }
+
+        .roadmap-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+        }
+
+        /* The Connector Line & Categories */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gray);
+            z-index: 1;
+        }
+
+        .category-node {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            text-align: center;
+            width: 80px;
+        }
+
+        .dot {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border: 3px solid var(--gray);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            transition: all 0.3s ease;
+        }
+
+        .category-node.active .dot {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .label {
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        /* Content Area */
+        .content-display {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            min-height: 150px;
+            border-left: 5px solid var(--accent);
+        }
+
+        .statement {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* Dropdown/More Section */
+        .more-trigger {
+            color: var(--accent);
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: underline;
+            display: inline-block;
+        }
+
+        .details-list {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .details-list.show {
+            display: block;
+        }
+        /* Styling for the list items under the "More" section */
+        .details-list li {
+            list-style-type: none;      /* Removes default bullets for a cleaner look */
+            padding: 12px 0;            /* Adds vertical breathing room */
+            border-bottom: 1px solid #008080; /* The separator line */
+            color: #444;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 20px;         /* Makes room for a custom accent */
+}
+
+/* Optional: Add a small teal square as a custom bullet */
+        .details-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 18px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent);
+}
+
+/* Removes the line from the very last item for a polished finish */
+        .details-list li:last-child {
+            border-bottom: none;
+}
+/*End applied Experience Section */
+/*Start of Executive Profile Section */
+ :root {
+            --primary: #003366;
+            --accent: #008080;
+            --text: #2d3748;
+            --bg: #ffffff;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); line-height: 1.6; }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 10% 0px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; color: var(--primary); margin: 0; }
+        .hero p { font-size: 1.25rem; color: var(--accent); font-weight: 600; margin-top: 10px; }
+
+        /* Content Sections */
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        section { margin-bottom: 50px; }
+        h2 { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            border-bottom: 2px solid var(--accent); 
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .bio-text { font-size: 1.1rem; color: #4a5568; }
+
+        /* Pillars/Skills Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .card {
+            padding: 25px;
+            background: #008080;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0; 
+            color: var (--primary);
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            /* text-align: center; -- This would center ONLY the header if you prefer left-aligned text below it */
+        }
+
+        .profile-frame {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            border: 4px solid #008080;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden; /* This crops the image into a circle */
+            background-color: #adafb1; /* Fallback color while loading */
+        }
+
+.headshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the photo isn't stretched */
+}
+
+/* Adjusting Hero padding now that we have an image */
+.hero {
+    padding: 50px 10% 5px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    text-align: center;
+}
+
+        /* Call to Action Button */
+        .cta-container { text-align: center; margin-top: 40px; }
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.2s, background 0.2s;
+            display: inline-block;
+        }
+        .btn:hover { background: var(--accent); transform: translateY(-2px); }
+/* Targeted styles for the Strategic Pillars section */
+    .strategic-pillars {
+        color: #ffffff; /* Sets all text to white */
+    }
+
+    .strategic-pillars h3 {
+        color: #ffffff;
+        margin-bottom: 15px;
+}
+
+.strategic-pillars .card {
+    /* Optional: ensures cards are legible if the section background is dark */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 8px;
+}
+ /* CTA at bottom */
+        .footer-cta {
+            padding: 60px 10%;
+            text-align: center;
+            background: #003366;
+            color: white;
+        }
+        .btn-white {
+            background: #003366;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid white;
+            font-weight: 700;
+            transition: transform 0.2s, background 0.2s;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+    <div class="profile-frame">
+        <img src="headshot2.jpg" alt="Jeremy LewisHeadshot" class="headshot">
+        </div>
+    <h1>Jeremy Lewis, MBA</h1>
+    <p>AI Leadership | Strategic Operations | Clinical Expertise</p>
+    <p style="color:#1a2a3a">lewis340@gmail.com | 816.674.3712 | Denver, CO</p>
+</header>
+
+<div class="container">
+    <section style="display: flex; align-items: center; gap: 80px; padding: 80px 20px; max-width: 1100px; margin: 0 auto;">
+    
+    <div style="flex: 50%; text-align: left;">
+        <h2 style="text-align: left;">Strategic Leadership</h2>
+        <p class="bio-text" style="font-size: 1.5rem; line-height: 1.8; color: #333;">
+            I specialize in <strong>"industrializing" AI</strong>: moving beyond pilot programs to deliver scalable HIPAA-compliant solutions that measurably optimize clinical and operational performance. 
+        </p>
+    </div>
+
+    <div style="flex: 50%; text-align: right;">
+        <img src="Venn_v6.png" alt="Executive Portrait or AI Concept" style="width: 100%; height: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    </div>
+
+</section>
+
+   <section class="strategic-pillars">
+    <h2 style="text-align: left;">Tactical Leadership</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>AI Governance</h3>
+            <p>I have direct experience in establishing AI governance frameworks that ensure compliance, ethical use, and responsible deployment of AI systems in healthcare environments.</p>
+        </div>
+        <div class="card">
+            <h3>AI Product Strategy</h3>
+            <p>I recognize the importance of aligning Product Management and UX Design with AI integration efforts to ensure clinical and business needs are understood and met through the deployment of the right AI solutions.</p>
+        </div>
+        <div class="card">
+            <h3>Operational ROI</h3>
+            <p>I have 20 years of operations management expertise; optimizing healthcare delivery and driving measurable ROI through AI and automation-enabled process improvements.</p>
+        </div>
+    </div>
+</section>
+    <section>
+        <h2>End-to-End Applied Experience</h2>
+
+        <p>Click on a category to learn more.</p>
+
+
+<div class="roadmap-container">
+    <div class="timeline">
+        <div class="category-node active" onclick="updateContent(0)">
+            <div class="dot"></div>
+            <span class="label">AI Vision</span>
+        </div>
+         <div class="category-node active" onclick="updateContent(1)">
+            <div class="dot"></div>
+            <span class="label">Idea Capture</span>
+        </div>
+
+         <div class="category-node active" onclick="updateContent(2)">
+            <div class="dot"></div>
+            <span class="label">Idea Assessment</span>
+        </div>
+        
+        <div class="category-node active" onclick="updateContent(3)">
+            <div class="dot"></div>
+            <span class="label">AI Governance</span>
+        </div>
+
+        <div class="category-node active" onclick="updateContent(4)">
+            <div class="dot"></div>
+            <span class="label">Project Mgmt.</span>
+        </div>
+
+        <div class="category-node active" onclick="updateContent(5)">
+            <div class="dot"></div>
+            <span class="label">Workforce Preparation</span>
+        </div>
+
+        <div class="category-node active" onclick="updateContent(6)">
+            <div class="dot"></div>
+            <span class="label">Build vs. Buy</span>
+        </div>
+
+         <div class="category-node active" onclick="updateContent(7)">
+            <div class="dot"></div>
+            <span class="label">Iterative Testing</span>
+         </div>
+
+          <div class="category-node active" onclick="updateContent(8)">
+            <div class="dot"></div>
+            <span class="label">Release at Scale</span>
+         </div>
+
+         <div class="category-node active" onclick="updateContent(9)">
+            <div class="dot"></div>
+            <span class="label">Post-Release Monitoring</span>
+         </div>
+
+    </div>
+
+    <div class="content-display">
+        <div id="statement" class="statement">Select a category to learn more.</div>
+        <div class="more-trigger" onclick="toggleMore()">View More +</div>
+        <ul id="details" class="details-list">
+            <li>Sub-point detail will appear here.</li>
+        </ul>
+    </div>
+     <section>
+        <h2>Explore Further</h2>
+         <p>The acceleration of AI in healthcare presents a unique dual challenge: 
+            <ul>
+                <li>Choosing the right use case</li>
+                <li>Transforming the organization's culture and readiness for AI</li>
+            </ul>
+            The two links below provide more detailed information on factors that influence AI success in healthcare organizations. </p>,<br>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="product2.html" class="btn" style="background: var(--accent);">Product Management & UX Design</a>
+        <a href="capabilities2.html" class="btn" style="background: var(--accent);">Building AI Momentum</a>
+        </div>
+        
+    </div>
+     </section>   
+        <div class="footer-cta">
+        <a href="https://www.linkedin.com/in/jeremy-lewis-mba-73a56b6" target="_blank" class="btn-white">Connect on LinkedIn</a>       
+        </div>
+    </section>
+</div>
+
+<script>
+    const data = [
+        /* AI Vision*/
+        {
+            statement: "I have significant experience in developing strategic visions for AI, resulting in a unified roadmap that prioritizes high-impact use cases and identifies the necessary resources for successful deployment.",
+            details: ["Communicate why and how AI will play a vital role in maintaining a competitive advantage.  AI requires a significant investment of time and resources. It is critical to set clear expectations.",
+                "Encourage a positive AI culture by having employees share their perspectives and ideas. Offer a safe environment for those who want to get more involved by testing different AI tools without worry.",
+                "Deploy a 'top down and bottom up' engagement process as this has proven to be a successful approach for enterprise-wide buy-in.",
+                "Avoid undue employee stress by refraining from suggesting the organization is lagging or inadequately equipped for AI integration."
+                ]
+            },
+        /* AI Idea Portal */
+        {
+            statement: "I have implemented an 'AI Idea Portal' that allows employees to submit AI use case proposals, which were then triaged by a cross-functional team to ensure alignment with strategic priorities and further vetting.",
+            details: ["Encourage employees to share all ideas, regardless of how small or crazy they may seem.",
+                "Offer a simplified intake form. Often.",
+                "Recognize and reward employees when their ideas are submitted or implemented."
+                ]
+            },
+            /* AI Idea Assessment */
+        {
+            statement:"I have developed a streamlined assessment framework that evaluates proposals based on technical feasibility, organization readiness, and the likelihood to succeed.",
+            details: ["Advocate for a 'Fail Fast' mentality in the assessment phase to preserve capital for high-probability AI deployments.",
+                "Focus on simplicity, ease, and speed to avoid excessive bureaucracy and ensure a positive user experience.",
+                "Involve cross-functional stakeholders early to ensure the assessment captures all critical dimensions of feasibility and impact.",
+                "Engage product management or technical resources to review complex proposals, but keep their time commitment to a minimum.",
+                "Standardize a scoring system to evaluate proposals against strategic objectives and resource requirements, ensuring consistency and transparency in decision-making.",
+                "Avoid overcomplicating the assessment process with excessive documentation or rigid criteria that may discourage innovation and slow down the evaluation of promising ideas."
+                ]   
+            },
+            /* AI Governance */
+        {
+            statement: "I have architected governance frameworks that balance the need for innovation with risk mitigation, ensuring that AI deployments adhere to ethical standards and regulatory requirements and still achieve business value.",
+            details: ["Approach governance with, 'how do we get to yes'. This means accepting compromises and making trade-offs that may erode value but ensures AI is deployed responsibly.",
+                "Tailor governance to the organization's current state of AI maturity. Governance is not a one-size-fits-all approach; it will evolve as the organization's AI capabilities grow.",
+                "Document key decisions and make them accessible to all employees so everyone understands the criteria for which AI solutions are reviewed. This will exponentially mature the organization's AI literacy."
+                ]
+            },
+            /* AI Project Management */
+
+        {
+                statement: "I have 10 years of experience successfully delivering complex advanced analytic and AI projects spanning clinical, operational, and financial domains.",
+                details: ["Activating a project is a critical milestone that signals to the organization that the project is moving from concept to reality, which can help build excitement and buy-in for the initiative.",
+                "Define and share the project's scope, schedule, and budget with all stakeholders.",
+                "Establish baseline KPIs to measure the project's success and value delivery."
+                ]
+            },
+            /* AI Workforce Preparation */
+        {
+                statement: "I have participated and led workshops to prepare teams for the transition into AI-augmented clinical and operational workflows.",
+                details: ["Develop AI literacy across the entire organization.",
+                    "Meet the employees where they are in their AI journey and provide tailored training to help them adapt to AI-augmented workflows.",
+                    "Host 'AI Open Office Hours' where employees can drop in to ask questions, share concerns, and get hands-on experience with AI tools in a supportive environment."
+                ]
+            },
+            /* AI Build vs. Buy */
+        {
+                statement: "My experience shows that 'buy when you can, build when you must.'",
+                details: ["When building internally, consider the necessary resources and expertise to support long-term maintenance and evolution of the solution.",
+                    "When buying, conduct thorough due diligence to ensure the vendor's solution aligns with the organization's requirements and that the vendor can provide ongoing support and updates.",
+                    "When buying, acknowledge that the solution may not be perfectly tailored to the organization's current workflow, but weigh this against the time and resources required to build a custom solution.",
+                    "When buying, understand the exact terms of the vendor agreement, especially around data ownership, security, and compliance.  Consider including performance guarantees and clear exit clauses to protect the organization from underperforming solutions or changes in the vendor's business strategy."
+                ]
+            },
+            /* Iterative Testing */
+        {
+                statement: "I have led and participated in many AI pilots. Each pilot is an opportunity to learn and iterate before executing a full deployment",
+                details: ["Develop an AI validation protocol that is tailored to each specific use case.",
+                    "Incorporate feedback loops to continuously improve the AI solution based on real-world performance.",
+                    "Ensure employees are trained and know what to expect from AI systems in their workflows prior to the pilot launch.",
+                    "Avoid rushing to scale before the pilot has demonstrated clear value and safety, as this can lead to costly failures and erode trust in AI initiatives."
+                ]
+            },
+            /* Release at Scale */
+        {
+                statement: "I have successfully managed many rollouts across large decentralized teams and to over 2000 clinical sites.",
+                details: ["Phased rollouts are key to manage risk and ensure smooth adoption.",
+                    "Empathize with employees during the transition and provide ample support to help them adapt to new AI-augmented workflows.",
+                    "Provide ample training and resources to ensure employees are comfortable and proficient with the new AI tools.",
+                    "Implement real-time monitoring dashboards to track performance and identify issues quickly.",
+                    "Celebrate the successes and capture opportunities for improvement in future initiatives."
+                ]
+            },
+            /* Post Release Monitoring */
+        {
+                statement: "This was one of the most important lessons I learned the hard way.  Post-deployment monitoring is not just a best practice, but necessary to ensure that AI models continue to perform well and deliver value over time.",
+                details: ["Track key performance indicators (KPIs) to ensure AI models are performing as expected.",
+                    "Monitor for model drift and retrain models when performance degrades.",
+                    "Establish a feedback loop with stakeholders to continuously refine and improve AI solutions.",
+                    "Allocate funding for resources needed to support ongoing monitoring and maintenance of AI systems."
+                ]
+            },
+    ];
+
+    function updateContent(index) {
+        // Update Active Visuals
+        document.querySelectorAll('.category-node').forEach((node, i) => {
+            node.classList.toggle('active', i === index);
+        });
+
+        // Update Text
+        const item = data[index];
+        document.getElementById('statement').innerText = item.statement;
+        
+        const list = document.getElementById('details');
+        list.innerHTML = item.details.map(d => `<li>${d}</li>`).join('');
+        list.classList.remove('show');
+    }
+
+    function toggleMore() {
+        document.getElementById('details').classList.toggle('show');
+    }
+</script>
+</body>
+</html>

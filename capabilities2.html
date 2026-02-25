@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Capabilities | Layered Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366;
+            --accent: #008080;
+            --text: #2d3748;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text); overflow-x: hidden; }
+
+        /* Navigation / Header */
+        header {
+            padding: 40px 10% 20px;
+            background: var(--white);
+            text-align: center;
+        }
+        .back-nav {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Layer Cake Section Styling */
+        .layer {
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        /* Alternate colors for layers */
+        .layer:nth-child(even) { background-color: var(--light-gray); }
+        .layer:nth-child(odd) { background-color: var(--white); }
+
+        .layer-content {
+            max-width: 800px;
+        }
+
+        .layer h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        /* Decorative line under layer headers */
+        .layer h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+        }
+
+        .layer p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        /* Responsive Mobile Behavior */
+        @media (max-width: 768px) {
+            .layer { padding: 60px 5%; }
+            .layer h2 { font-size: 1.5rem; }
+            .layer p { font-size: 1.05rem; }
+        }
+
+        /* CTA at bottom */
+        .footer-cta {
+            padding: 60px 10%;
+            text-align: center;
+            background: var(--primary);
+            color: white;
+        }
+        .btn-white {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .btn-white:hover {
+            background: white;
+            color: var(--primary);
+        }
+        .layer-bullets {
+            list-style: none; /* We will use custom accents instead of standard dots */
+            padding: 0;
+            margin: 30px auto 0;
+            max-width: 700px;
+            text-align: left; /* Bullets are easier to read left-justified */
+        }
+
+        .layer-bullets li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+/* 1. Reset default bullets on the main container */
+.layer-bullets {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* 2. Apply the teal accent ONLY to top-level <li> elements */
+.layer-bullets > li {
+    position: relative;
+    padding-left: 1.5rem; /* Space for the custom bullet */
+    margin-bottom: 12px;
+}
+
+.layer-bullets > li::before {
+    content: '•'; /* Fixed encoding for the bullet */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+/* 3. Style the Nested (Sub) List */
+.layer-bullets ul {
+    list-style-type: square; 
+    margin-top: 8px;
+    margin-left: 20px; /* Indent the sub-bullets */
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 4. REMOVE the custom accent from sub-bullets to prevent double-bulleing */
+.layer-bullets ul li::before {
+    content: none; 
+}
+
+/* 5. Sub-bullet specific spacing */
+.layer-bullets ul li {
+    position: static; /* Resets the relative positioning from the parent */
+    padding-left: 0;
+    margin-bottom: 4px;
+}
+
+.layer-bullets li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-nav">← BACK TO EXECUTIVE PROFILE</a>
+    <h1 style="color: var(--primary);">Building AI Momentum</h1>
+    <p style="color: var(--accent); font-weight: 600;">Regardless of where you are on your AI journey, AI initiatives should be tailored to your organization's specific needs and goals.<br>Identify and focus on your specific opportunities.</p>
+</header>
+
+<main>
+    <section class="layer">
+        <div class="layer-content">
+            <h2>AI Capabilities Delivering Value Today</h2>
+            <p>The most impactful AI applications today are those that augment human capabilities rather than replace them. </p>
+                
+            <h3 style="color: var(--accent);">Key AI capabilities that are leading in measurable value</h3>
+
+            <ul class="layer-bullets">
+            <li><strong>Enterprise Search:</strong> Empowers employees by improving access to internal knowledge and reducing time spent searching for information.</li>
+            <li><strong>Content Generation and Summarization:</strong> Improves productivity for both clinicians and administrative staff.</li>
+            <li><strong>Contact Center Agents:</strong> Reduces response times and improves customer satisfaction.</li>
+            <li><strong>Office Productivity Tools:</strong> Accelerates content creation, editing, and collaboration capabilities.</li>
+            <li><strong>Clinical Decision Support:</strong> Saves clinicians time by extracting key medical insights from large volumes of clinical data to support decision-making.</li>
+            <li><strong>Project Management:</strong> Helps teams stay coordinated by AI reading and summarizing project updates and generating status reports on demand.</li>
+            <li><strong>Coding Assistants:</strong> Aids developers by significantly reducing development time and improving code quality.</li>
+            <li><strong>Reporting & Analytics:</strong> Enables non-technical people to engage with data by asking natural language questions to get actionable insights.</li>
+            <li><strong>Revenue Cycle Management:</strong> Reads payor responses and automatically generates appropriate draft responses and identifies probable follow-up actions.    </li>
+            <li><strong>Agentic AI:</strong> Performs routine tasks, such as scheduling appointments or managing workflows, reducing the need for constant human oversight.</li>
+            
+        </ul>
+
+            <p style="color: var(--accent);"> Without clean, curated, and accessible data, even the most advanced AI tools will fail to deliver value.   </p>
+        </div>
+    </section>
+
+    <section class="layer">
+        <div class="layer-content">
+            <h2>AI Regulatory Landscape</h2>
+            <p>The current U.S. AI Regulatory landscape is complex. Organizations must pay attention to this changing landscape to ensure compliance and avoid potential legal risks.</p>
+            <p>I'm tracking the following sites to stay informed:</p>
+        
+                <a href="https://ai.gov" target="_blank">Current Administration's Perspective on AI</a><br>
+                <a href="https://www.nairrpilot.org" target="_blank">Inventory of AI pilots and supported by the National Science Foundation and US Federal Agencies </a><br>
+                <a href="https://ai-law-center.orrick.com/us-ai-law-tracker/" target="_blank">US AI Law Tracking Site</a><br>
+                <a href="https://www.congress.gov/" target="_blank">Congress.gov - Search for Legislative Bills on the Use of AI</a><br>
+            
+        </div>
+    </section>
+
+    <section class="layer">
+        <div class="layer-content">
+            <h2>Product Management & UX Design plays a Critical Role</h2>
+            <p>The single biggest competitive advantage will be to identify and understand deep-rooted human problems first, then apply the appropriate technology to help solve the problem.</p><br>
+            <p style="color: var(--accent);"><em><strong>Application development is democratizing: non-technical teams are now building applications and taking lead on design and testing, IT's role will evolve to strategic consultancy while maintaining responsibility for execution.</em></strong></p>
+        </div>
+    </section>
+
+    <section class="layer">
+        <div class="layer-content">
+            <h2>Empowerment</h2>
+            <p>As consumers become more empowered by using AI, they will naturally demand smarter, more intuitive products and services from businesses they support.</p>
+        </div>
+    </section>
+
+    <section class="layer">
+        <div class="layer-content">
+            <h2>What Excites Me</h2>
+            
+            <ul class="layer-bullets">
+                <li><strong>Autonomous Vehicles:</strong> Imagine a world where vehicles are fully autonomous and liberate us from driving responsibilities.</li>
+                    <ul class="ul">
+                        <li><strong> <a href="https://aurora.tech/newsroom" target="_blank">Autonomous Freight Delivery:</a></strong> As of February 2026, Aurora Innovation has surpassed 250,000 miles of commercial, fully driverless operation with its autonomous trucks.</li>
+                        <li><strong><a href="https://waymo.com/about/#story" target="_blank">Autonomous Passenger Vehicles:</a></strong> As of early 2026, Waymo has successfully completed over 20 million lifetime trips and is currently operating at a scale 400,000 to 450,000 paid rides per week.</li>
+                    </ul>
+                <li><strong>Humanoids:</strong>  Let robots to perform the dull, dirty, and dangerous tasks.</li>
+                     <ul class="ul">
+                        <li><strong> <a href="https://www.youtube.com/watch?v=-e1_QhJ1EhQ" target="_blank">Meet Atlas:</a></strong> By 2030, applications will extend to component assembly, and over time, Atlas will also take on tasks involving repetitive motions, heavy loads, and other complex operations – ensuring safer working environments for factory employees to advance smart factory innovation.</li>
+                        <li><strong><a href="https://www.1x.tech/neo" target="_blank">Meet Neo:</a></strong> It's still a few years away, but NEO is positioning itself to take on boring and mundane tasks around the house so you can focus more on what you enjoy.</li>
+                    </ul>    
+                <li><strong>Vibe Coding:</strong>  Imagine the value if business teams identify a problem, quickly build an app to address it, and then immediately test it.</li>
+                        <ul class="ul">
+                        <li><strong> <a href="https://www.youtube.com/watch?v=oNSJREczC7Q" target="_blank">Anthropic Coding Surge:</a></strong> Vibe coding will empower leaders to bypass traditional development bottlenecks by using natural language to rapidly prototype, iterate, and deploy functional solutions at a fraction of the historical cost and time.</li>
+        
+            
+                    </ul>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<div class="footer-cta">
+
+    <a href="https://www.linkedin.com/in/jeremy-lewis-mba-73a56b6" target="_blank" class="btn-white">Connect on LinkedIn</a><br><br>
+        
+    <a href="index.html" class="back-link" style="color: var(--accent);">Return to Executive Overview</a>
+</a>
+</div>
+
+</body>
+</html>
