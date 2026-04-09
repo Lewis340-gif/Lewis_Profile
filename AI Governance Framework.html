@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Governance Framework</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --accent: #008080;
+            --details-blue: rgba(0, 51, 102, 0.65);
+            --text: #2d3748;
+            --bg: #ffffff;
+            --soft-bg: #f8fafc;
+            --soft-bg-2: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--bg);
+        }
+
+        header {
+            padding: 100px 10% 40px;
+            background: linear-gradient(135deg, var(--soft-bg) 0%, var(--soft-bg-2) 100%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p,
+        ul {
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            background: #008080;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .card h2 {
+            color: white;
+            border-bottom: 2px solid var(--details-blue);
+        }
+
+        .governance-image {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .details-column {
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+        }
+
+        .details-column.nist {
+            background: linear-gradient(180deg, rgba(0, 51, 102, 0.45) 0%, rgba(0, 51, 102, 0.2) 100%);
+            border-color: rgba(255,255,255,0.35);
+        }
+
+        .details-column.soc2 {
+            background: linear-gradient(180deg, rgba(0, 51, 102, 0.45) 0%, rgba(0, 51, 102, 0.2) 100%);
+            border-color: rgba(255,255,255,0.35);
+        }
+
+        .details-column h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+            color: white;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .details-column ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .details-column li {
+            margin-bottom: 10px;
+        }
+
+        .details-column li:last-child {
+            margin-bottom: 0;
+        }
+
+        .details-column strong {
+            color: #ffffff;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: rgba(255,255,255,0.55);
+        }
+
+        .details-footer {
+            text-align: center;
+            margin-top: 24px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI Governance Framework</h1>
+        <p>Principles and guardrails for responsible and compliant AI solutions.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Purpose</h2>
+            <p>
+                Establish a clear, reproducible, and scalable governance model that aligns clinical, legal, compliance,
+                and operational stakeholders while ensuring continuous safe, ethical, and effective AI deployment.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Key Considerations for Successful AI Governance</h2>
+            <ul>
+                <li><strong>Evolving Landscape:</strong> An AI Governance framework will continue to evolve and require ongoing attention.</li>
+                <li><strong>Customize Your Approach:</strong> Tailor the governance framework to your organization's specific needs and context.</li>
+                <li><strong>Strategy Alignment:</strong> Tie AI initiatives to measurable clinical and business outcomes.</li>
+                <li><strong>Risk Management:</strong> Document model limitations, bias controls, and monitoring plans.</li>
+                <li><strong>Security & Privacy:</strong> Enforce safeguards and data minimization practices.</li>
+                <li><strong>Operational Readiness:</strong> Define workflows, human oversight, and escalation paths.</li>
+                <li><strong>Lifecycle Governance:</strong> Approve, monitor, and retire AI solutions with clear accountability.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Where to Start</h2>
+            <p>Two credible frameworks to establish a solid AI Governance and Risk Management foundation:</p>
+            <ul>
+                <li>NIST AI Risk Management Framework (AI RMF)</li>
+                <li>SOC2 Reporting Framework</li>
+            </ul>
+            <img src="images/AI_Governance_Framework.png" alt="AI Governance Framework" class="governance-image">
+
+            <h2 style="margin-top: 28px;">Implementation</h2>
+            <div class="details-grid">
+                <div class="details-column nist">
+                    <h3>NIST AI RMF</h3>
+                    <ul>
+                        <li><strong>Govern:</strong> Establish policies, roles, oversight, and accountability for responsible AI decisions.</li>
+                        <li><strong>Map:</strong> Define the AI system context, intended use, stakeholders, data sources, and potential impacts. (model card components)</li>
+                        <li><strong>Measure:</strong> Evaluate and track risks (e.g., bias, reliability, security, safety, and explainability) using evidence.</li>
+                        <li><strong>Manage:</strong> Prioritize and treat identified risks through controls, monitoring, escalation, and continuous improvement.</li>
+                    </ul>
+                </div>
+
+                <div class="details-column soc2">
+                    <h3>SOC2 Framework</h3>
+                    <ul>
+                        <li><strong>Security:</strong> Protect systems against unauthorized access and threats through preventive and detective controls.</li>
+                        <li><strong>Availability:</strong> Ensure systems are operational and accessible as committed in service objectives.</li>
+                        <li><strong>Processing Integrity:</strong> Confirm system processing is complete, valid, accurate, timely, and authorized.</li>
+                        <li><strong>Confidentiality:</strong> Safeguard sensitive information designated as confidential from improper disclosure.</li>
+                        <li><strong>Privacy:</strong> Govern personal data collection, use, retention, disclosure, and disposal per policy and law.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="details-footer">Let's chat about how I can assist you in establishing successful AI Governance.</p>
+        </section>
+
+        <a href="index.html" class="back-link">&larr; Return to Executive Overview</a>
+    </main>
+</body>
+</html>
